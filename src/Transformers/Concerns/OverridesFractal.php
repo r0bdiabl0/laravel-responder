@@ -19,7 +19,7 @@ trait OverridesFractal
      *
      * @return array
      */
-    public function getAvailableIncludes()
+    public function getAvailableIncludes(): array
     {
         if ($this->relations == ['*']) {
             return $this->resolveScopedIncludes($this->getCurrentScope());
@@ -33,7 +33,7 @@ trait OverridesFractal
      *
      * @return array
      */
-    public function getDefaultIncludes()
+    public function getDefaultIncludes(): array
     {
         return array_keys($this->normalizeRelations($this->load));
     }
@@ -46,7 +46,7 @@ trait OverridesFractal
      * @param  mixed                 $data
      * @return \League\Fractal\Resource\ResourceInterface
      */
-    protected function callIncludeMethod(Scope $scope, $identifier, $data)
+    protected function callIncludeMethod(Scope $scope, string $identifier, $data)
     {
         $parameters = iterator_to_array($scope->getManager()->getIncludeParams($scope->getIdentifier($identifier)));
 
@@ -76,7 +76,7 @@ trait OverridesFractal
      *
      * @return \League\Fractal\Scope
      */
-    public abstract function getCurrentScope();
+    public abstract function getCurrentScope(): ?Scope;
 
     /**
      * Normalize relations to force a key value structure.
