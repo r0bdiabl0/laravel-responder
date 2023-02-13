@@ -22,7 +22,7 @@ class SuccessSerializer extends ArraySerializer
      * @param  array  $data
      * @return array
      */
-    public function collection(?string $resourceKey, array $data)
+    public function collection(?string $resourceKey, array $data): array
     {
         return ['data' => $data];
     }
@@ -34,7 +34,7 @@ class SuccessSerializer extends ArraySerializer
      * @param  array  $data
      * @return array
      */
-    public function item(?string $resourceKey, array $data)
+    public function item(?string $resourceKey, array $data): array
     {
         return ['data' => $data];
     }
