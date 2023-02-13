@@ -107,7 +107,7 @@ class SuccessSerializer extends ArraySerializer
      * @param  array $includedData
      * @return array
      */
-    public function mergeIncludes($transformedData, $includedData)
+    public function mergeIncludes(array $transformedData, array $includedData): array
     {
         foreach (array_keys($includedData) as $key) {
             $includedData[$key] = $includedData[$key]['data'];
